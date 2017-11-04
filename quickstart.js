@@ -5,7 +5,7 @@ var googleAuth = require('google-auth-library');
 
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/calendar-nodejs-quickstart.json
-var SCOPES = ['https://www.googleapis.com/auth/calendar.readonly'];
+var SCOPES = ['https://www.googleapis.com/auth/calendar'];
 var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
     process.env.USERPROFILE) + '/.credentials/';
 var TOKEN_PATH = TOKEN_DIR + 'calendar-nodejs-quickstart.json';
@@ -59,6 +59,7 @@ function getNewToken(oauth2Client, callback) {
     access_type: 'offline',
     scope: SCOPES
   });
+  //
   console.log('Authorize this app by visiting this url: ', authUrl);
   var rl = readline.createInterface({
     input: process.stdin,
