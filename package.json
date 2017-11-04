@@ -1,0 +1,23 @@
+{
+  "name": "teacherspet",
+  "version": "1.0.0",
+  "description": "moodle/TA/Remind/forum",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeychik/teacherspet.git"
+  },
+  "author": "Samyar Vahid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joeychik/teacherspet/issues"
+  },
+  "homepage": "https://github.com/joeychik/teacherspet#readme",
+  "dependencies": {
+    "google-auth-library": "^0.11.0",
+    "googleapis": "^22.2.0"
+  }
+}
