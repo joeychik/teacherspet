@@ -12,7 +12,8 @@
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
-  <div id="my-signin2"></div>
+<!--sign in-->
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
   <script>
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
@@ -29,7 +30,7 @@
         console.log("ID Token: " + id_token);
       };
     </script>
-
+<!--sign out-->
   <a href="#" onclick="signOut();">Sign out</a>
   <script>
     function signOut() {
