@@ -1,3 +1,39 @@
+var etag;
+var id;
+
+{
+  "kind": "calendar#calendarListEntry",
+  "etag": etag, //Get this
+  "id": string, //Get this
+  "summary": "Planner",
+  "description": "Plan out school events",
+  "location": "Toronto",
+  "timeZone": "America/Toronto",
+  "summaryOverride": string,
+  "colorId": string,
+  "backgroundColor": string,
+  "foregroundColor": string,
+  "hidden": false,
+  "selected": true,
+  "accessRole": string,
+  "defaultReminders": [
+    {
+      "method": "sms",
+      "minutes": 120
+    }
+  ],
+  "notificationSettings": {
+    "notifications": [
+      {
+        "type": "eventCreation",
+        "method": "sms"
+      }
+    ]
+  },
+  "primary": true,
+  "deleted": false
+}
+
 var summary;
 var location;
 var description;
@@ -5,20 +41,17 @@ var startDateTime;
 var endDateTime;
 var timeZone;
 
-//'2015-05-28T09:00:00-07:00'
-
-
 var event = {
   'summary': summary,
   'location': location,
   'description': description,
   'start': {
     'dateTime': startDateTime,
-    'timeZone': 'America/Los_Angeles',
+    'timeZone': 'America/Toronto',
   },
   'end': {
     'dateTime': endDateTime,
-    'timeZone': 'America/Los_Angeles',
+    'timeZone': 'America/Toronto',
   },
   'recurrence': [
     'RRULE:FREQ=DAILY;COUNT=2'
