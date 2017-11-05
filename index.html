@@ -21,6 +21,11 @@
     <!-- Custom styles for this template -->
     <link href="startbootstrap-freelancer-gh-pages/css/freelancer.min.css" rel="stylesheet">
 
+    <!--google sign in stuff-->
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
   </head>
 
   <body id="page-top">
@@ -37,6 +42,9 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#portfolio">About</a>
+            </li>
+            <li class="nav-item">
+              <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
             </li>
           </ul>
         </div>
@@ -389,6 +397,24 @@
         </div>
       </div>
     </div>
+
+    <!--google sign in scripts-->
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+    </script>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
