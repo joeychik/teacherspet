@@ -107,7 +107,7 @@ function listEvents(auth) {
     auth: auth,
     calendarId: 'primary',
     timeMin: (new Date()).toISOString(),
-    maxResults: 10,
+    maxResults: 20,
     singleEvents: true,
     orderBy: 'startTime'
   }, function(err, response) {
@@ -119,7 +119,7 @@ function listEvents(auth) {
     if (events.length == 0) {
       console.log('No upcoming events found.');
     } else {
-      console.log('Upcoming 10 events:');
+      console.log('Upcoming 20 events:');
       for (var i = 0; i < events.length; i++) {
         var event = events[i];
         var start = event.start.dateTime || event.start.date;
